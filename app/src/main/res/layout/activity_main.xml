@@ -7,7 +7,7 @@
     tools:context="xavier.calcsimples.MainActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/tex1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,8 +20,8 @@
         android:id="@+id/tex2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_below="@+id/editText"
+        android:layout_alignEnd="@+id/tex1"
+        android:layout_below="@+id/tex1"
         android:layout_marginTop="39dp"
         android:ems="10"
         android:inputType="textPersonName" />
@@ -31,27 +31,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="47dp"
+        android:layout_alignStart="@+id/tex1"
+        android:layout_marginTop="48dp"
         android:text="Valor 1:" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/tex1"
+        android:layout_below="@+id/tex1"
         android:text="Valor 2:" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView2"
         android:layout_alignStart="@+id/tex2"
         android:layout_below="@+id/tex2"
         android:layout_marginTop="16dp"
-        android:text="+" />
+        android:text="+"
+        android:onClick="op"
+        android:tag="soma"/>
 
     <Button
         android:id="@+id/button3"
@@ -59,8 +61,41 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button"
         android:layout_alignBottom="@+id/button"
-        android:layout_marginStart="50dp"
         android:layout_toEndOf="@+id/button"
-        android:text="-" />
+        android:text="-"
+        android:onClick="op"
+        android:tag="sub"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_toEndOf="@+id/button3"
+        android:text="*"
+        android:onClick="op"
+        android:tag="mul"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button4"
+        android:layout_toEndOf="@+id/button4"
+        android:text="/"
+        android:onClick="op"
+        android:tag="div"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="102dp"
+        android:layout_marginEnd="19dp"
+        android:layout_toStartOf="@+id/button5"
+        android:text="O resultado é:" />
 
 </RelativeLayout>
